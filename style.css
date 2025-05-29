@@ -321,7 +321,7 @@ form button:hover {
   .nav-menu {
     position: fixed;
     left: -100%;
-    top: 70px;
+    top: 80px;
     flex-direction: column;
     background-color: #1565c0;
     width: 100%;
