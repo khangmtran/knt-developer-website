@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KnT Developer LLC - Mobile App Development</title>
-    <meta name="description" content="KnT Developer LLC - Professional iOS mobile app development company creating user-friendly applications that solve real-world problems.">
+    <meta
+      name="description"
+      content="KnT Developer LLC - Professional iOS mobile app development company creating user-friendly applications that solve real-world problems."
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -14,11 +17,16 @@
     </header>
 
     <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Serivce</a>
+      <button class="hamburger" onclick="toggleMenu()">
+        <span></span> <span></span> <span></span>
+      </button>
+      <div class="nav-menu" id="navMenu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+      </div>
     </nav>
 
     <main>
@@ -32,10 +40,11 @@
           experiences through technology.
         </p>
         <p>
-          As a registered LLC specializing in mobile development, we combine technical expertise 
-          with thoughtful design to create applications that serve real user needs. Our focus 
-          on quality over quantity ensures that every app we release meets the highest standards 
-          of performance and user experience.
+          As a registered LLC specializing in mobile development, we combine
+          technical expertise with thoughtful design to create applications that
+          serve real user needs. Our focus on quality over quantity ensures that
+          every app we release meets the highest standards of performance and
+          user experience.
         </p>
       </section>
 
@@ -50,9 +59,9 @@
               class="product-image"
             />
             <p>
-              This comprehensive app helps Vietnamese speakers prepare for the U.S.
-              citizenship test with interactive questions, bilingual support, and 
-              up-to-date information. Launching soon on iOS!
+              This comprehensive app helps Vietnamese speakers prepare for the
+              U.S. citizenship test with interactive questions, bilingual
+              support, and up-to-date information. Launching soon on iOS!
             </p>
             <p style="color: #1565c0; font-weight: bold; margin-top: 1em">
               Click to learn more →
@@ -66,22 +75,60 @@
         <div class="features-grid">
           <div class="feature-card">
             <h3>🎯 Quality First</h3>
-            <p>Every application is thoroughly tested and refined to ensure exceptional performance and user experience.</p>
+            <p>
+              Every application is thoroughly tested and refined to ensure
+              exceptional performance and user experience.
+            </p>
           </div>
-          
+
           <div class="feature-card">
             <h3>🔒 Privacy Focused</h3>
-            <p>User privacy and data protection are fundamental to our development philosophy and business practices.</p>
+            <p>
+              User privacy and data protection are fundamental to our
+              development philosophy and business practices.
+            </p>
           </div>
-          
+
           <div class="feature-card">
             <h3>🚀 Innovation</h3>
-            <p>We leverage the latest iOS technologies and development practices to create modern, efficient applications.</p>
+            <p>
+              We leverage the latest iOS technologies and development practices
+              to create modern, efficient applications.
+            </p>
           </div>
         </div>
       </section>
     </main>
 
     <footer>&copy; 2025 KnT Developer LLC. All rights reserved.</footer>
+    <script>
+      function toggleMenu() {
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+      }
+
+      document.querySelectorAll(".nav-menu a").forEach((link) => {
+        link.addEventListener("click", () => {
+          const hamburger = document.querySelector(".hamburger");
+          const navMenu = document.querySelector(".nav-menu");
+
+          hamburger.classList.remove("active");
+          navMenu.classList.remove("active");
+        });
+      });
+
+      document.addEventListener("click", (e) => {
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+
+        if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+          hamburger.classList.remove("active");
+          navMenu.classList.remove("active");
+        }
+      });
+    </script>
   </body>
 </html>
