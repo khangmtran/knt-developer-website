@@ -41,7 +41,7 @@ nav a:hover {
   background: none;
   border: none;
   position: absolute;
-  right: 1em;
+  right: 0.5em;
   top: 50%;
   transform: translateY(-50%);
 }
