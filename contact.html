@@ -1,41 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact - KnT Developer LLC</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header>
-    <h1>Contact Us</h1>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact - KnT Developer LLC</title>
+    <meta
+      name="description"
+      content="Contact KnT Developer LLC for mobile app development inquiries, technical support, and collaboration opportunities."
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Contact Us</h1>
+    </header>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-    <a href="privacy.html">Privacy</a>
-  </nav>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+    </nav>
 
-  <main>
-    <p>Have a question or collaboration idea? Send me a message!</p>
-    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-      <label for="name">Name</label>
-      <input type="text" name="name" required />
+    <main>
+      <section>
+        <h2>Get In Touch</h2>
+        <p>
+          Have a question, collaboration idea, or need technical support? We'd
+          love to hear from you! Send us a message using the form below or reach
+          out directly via email.
+        </p>
+      </section>
 
-      <label for="email">Email</label>
-      <input type="email" name="email" required />
+      <section>
+        <form
+          action="https://formspree.io/f/mblonwoa"
+          method="POST"
+          accept-charset="UTF-8"
+        >
+          <label for="name">Name *</label>
+          <input type="text" id="name" name="name" required />
 
-      <label for="message">Message</label>
-      <textarea name="message" rows="6" required></textarea>
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" name="email" required />
 
-      <button type="submit">Send</button>
-    </form>
-  </main>
+          <label for="subject">Subject</label>
+          <input
+            type="text"
+            id="subject"
+            name="subject"
+            placeholder="What's this about?"
+          />
 
-  <footer>
-    &copy; 2025 KnT Developer LLC. All rights reserved.
-  </footer>
-</body>
+          <label for="message">Message *</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="6"
+            required
+            placeholder="Tell us about your inquiry, technical issue, or collaboration idea..."
+          ></textarea>
+
+          <!-- Hidden field to help with spam protection -->
+          <input
+            type="hidden"
+            name="_subject"
+            value="New contact form submission from KnT Developer LLC website"
+          />
+
+          <button type="submit">Send Message</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>&copy; 2025 KnT Developer LLC. All rights reserved.</footer>
+  </body>
 </html>
