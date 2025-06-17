@@ -1,113 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact - KnT Developer LLC</title>
-    <meta
-      name="description"
-      content="Contact KnT Developer LLC for mobile app development inquiries, technical support, and collaboration opportunities."
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header>
-      <h1>Contact Us</h1>
-    </header>
 
-    <nav>
-      <button class="hamburger" onclick="toggleMenu()">
-        <span></span> <span></span> <span></span>
-      </button>
-      <div class="nav-menu" id="navMenu">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="terms.html">Terms of Service</a>
-      </div>
-    </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - KnT Developer LLC</title>
+  <meta name="description"
+    content="Contact KnT Developer LLC for mobile app development inquiries, technical support, and collaboration opportunities." />
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-    <main>
-      <section>
-        <h2>Get In Touch</h2>
-        <p>
-          Have a question, collaboration idea, or need technical support? We'd
-          love to hear from you! Send us a message using the form below or reach
-          out directly via email.
-        </p>
-      </section>
+<body>
+  <header>
+    <h1>Contact Us</h1>
+  </header>
 
-      <section>
-        <form
-          action="https://formspree.io/f/mblonwoa"
-          method="POST"
-          accept-charset="UTF-8"
-        >
-          <label for="name">Name *</label>
-          <input type="text" id="name" name="name" required />
+  <nav>
+    <button class="hamburger" onclick="toggleMenu()">
+      <span></span> <span></span> <span></span>
+    </button>
+    <div class="nav-menu" id="navMenu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+    </div>
+  </nav>
 
-          <label for="email">Email Address *</label>
-          <input type="email" id="email" name="email" required />
+  <main>
+    <section>
+      <h2>Get In Touch</h2>
+      <p>
+        Have a question, collaboration idea, or need technical support? We'd
+        love to hear from you! Send us a message using the form below or reach
+        out directly via email.
+      </p>
+    </section>
 
-          <label for="subject">Subject</label>
-          <input
-            type="text"
-            id="subject"
-            name="subject"
-            placeholder="What's this about?"
-          />
+    <section>
+      <form action="https://formspree.io/f/mblonwoa" method="POST" accept-charset="UTF-8">
+        <label for="name">Name *</label>
+        <input type="text" id="name" name="name" required />
 
-          <label for="message">Message *</label>
-          <textarea
-            id="message"
-            name="message"
-            rows="6"
-            required
-            placeholder="Tell us about your inquiry, technical issue, or collaboration idea..."
-          ></textarea>
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" name="email" required />
 
-          <!-- Hidden field to help with spam protection -->
-          <input
-            type="hidden"
-            name="_subject"
-            value="New contact form submission from KnT Developer LLC website"
-          />
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" placeholder="What's this about?" />
 
-          <button type="submit">Send Message</button>
-        </form>
-      </section>
-    </main>
+        <label for="message">Message *</label>
+        <textarea id="message" name="message" rows="6" required
+          placeholder="Tell us about your inquiry, technical issue, or collaboration idea..."></textarea>
 
-    <footer>&copy; 2025 KnT Developer LLC. All rights reserved.</footer>
-    <script>
-      function toggleMenu() {
+        <!-- Hidden field to help with spam protection -->
+        <input type="hidden" name="_subject" value="New contact form submission from KnT Developer LLC website" />
+
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>&copy; 2025 KnT Developer LLC. All rights reserved.</footer>
+  <script>
+    function toggleMenu() {
+      const hamburger = document.querySelector(".hamburger");
+      const navMenu = document.querySelector(".nav-menu");
+
+      hamburger.classList.toggle("active");
+      navMenu.classList.toggle("active");
+    }
+
+    document.querySelectorAll(".nav-menu a").forEach((link) => {
+      link.addEventListener("click", () => {
         const hamburger = document.querySelector(".hamburger");
         const navMenu = document.querySelector(".nav-menu");
 
-        hamburger.classList.toggle("active");
-        navMenu.classList.toggle("active");
+        hamburger.classList.remove("active");
+        navMenu.classList.remove("active");
+      });
+    });
+
+    document.addEventListener("click", (e) => {
+      const hamburger = document.querySelector(".hamburger");
+      const navMenu = document.querySelector(".nav-menu");
+
+      if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+        hamburger.classList.remove("active");
+        navMenu.classList.remove("active");
       }
+    });
+  </script>
+</body>
 
-      document.querySelectorAll(".nav-menu a").forEach((link) => {
-        link.addEventListener("click", () => {
-          const hamburger = document.querySelector(".hamburger");
-          const navMenu = document.querySelector(".nav-menu");
-
-          hamburger.classList.remove("active");
-          navMenu.classList.remove("active");
-        });
-      });
-
-      document.addEventListener("click", (e) => {
-        const hamburger = document.querySelector(".hamburger");
-        const navMenu = document.querySelector(".nav-menu");
-
-        if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
-          hamburger.classList.remove("active");
-          navMenu.classList.remove("active");
-        }
-      });
-    </script>
-  </body>
 </html>
